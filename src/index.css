@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Urbanist:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap");
+@import "tailwindcss";
+
+@theme {
+  /* Executive Classic Premium Color System (Restored) */
+  --color-background: #f8f9fb; /* Crisp Ice White */
+  --color-surface: #ffffff; /* Pure White */
+  --color-navy: #0b101d; /* Deep Midnight Navy */
+  --color-navy-soft: #1e2638; /* Soft Navy Slate */
+  --color-blue: #c5a059; /* Matte Champagne Gold (Primary CTA) */
+  --color-blue-dim: #a88444; /* Deep Burnished Gold Accent */
+  --color-teal: #4a5568; /* Muted Slate Gray */
+  --color-gold: #dfd3c3; /* Warm Light Ivory Element */
+  --color-line: #e6eaf0; /* Clean Ice Line Grey */
+
+  /* Fixed Fonts Architecture (Restored) */
+  --font-display: "Syne", sans-serif;
+  --font-body: "Urbanist", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Custom Functional Keyframe Animations */
+  --animate-marquee: marquee 32s linear infinite;
+  --animate-trace: trace 3.2s ease-in-out infinite;
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes trace {
+  0%,
+  100% {
+    stroke-dashoffset: 240;
+    opacity: 0.15;
+  }
+  50% {
+    stroke-dashoffset: 0;
+    opacity: 0.55;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-navy);
+  font-family: var(--font-body);
+  letter-spacing: -0.01em; /* Premium layout compression for body elements */
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Global Typography Tuning for Premium Layouts */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  letter-spacing: -0.03em; /* Tight tracking makes Syne look structural and expensive */
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+::selection {
+  background: var(--color-blue);
+  color: var(--color-surface);
+}
+
+/* Luxury Blueprint Grid Systems adapted to scale elegantly with the Midnight Navy tint */
+.blueprint-grid {
+  background-image:
+    linear-gradient(var(--color-navy), transparent 1px),
+    linear-gradient(90deg, var(--color-navy), transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.025; /* Highly subtle, premium line accent visibility */
+}
+
+.blueprint-grid-dark {
+  background-image:
+    linear-gradient(rgba(230, 234, 240, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(230, 234, 240, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Focused UI State Management updates */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High-End Monospace Tag Architecture */
+.mono-tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em; /* Extremely stretched tracking for luxury tech feel */
+}
